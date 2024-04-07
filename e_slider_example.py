@@ -11,6 +11,7 @@ def main(page: ft.Page):
     page.add(
         ft.Column(
             controls=[
+                ESlider(),
                 ESlider(on_change=lambda x: print(f'{x:g}'), bgcolor='#999900', color='#88ffffff', margin=5, thickness=30),
                 ESlider(value=150, color='orange', length=400, max=200, min=100, divisions=5, margin=4, thickness=50, border_radius=15, on_change=lambda x: print(f'{x:g}')),
                 ESlider(color='purple', margin=3, on_change=lambda x: print(f'{x:g}')),

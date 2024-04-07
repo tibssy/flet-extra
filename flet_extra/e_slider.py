@@ -24,7 +24,7 @@ class ESlider(GestureDetector):
             divisions: Optional[int] = None,
             color: Optional[str] = 'blue',
             bgcolor: Optional[str] = '#666666',
-            margin: Optional[int] = None,
+            margin: Optional[int] = 0,
             animate: AnimationValue = Animation(400, AnimationCurve.EASE),
             border_radius: Optional[int] = None,
             value: OptionalNumber = 0,
