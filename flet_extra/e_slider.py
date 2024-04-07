@@ -42,7 +42,7 @@ class ESlider(GestureDetector):
         self.margin = margin
         self.animate = animate
         self.border_radius = border_radius if border_radius else self.thickness // 2
-        self.value = value if value in range(self.min + self.thickness // 2, self.max - self.thickness) else None
+        self.value = value
         self.on_pan_start = self.update_slider
         self.on_pan_update = self.update_slider
         self.on_pan_end = self.enable_animation
