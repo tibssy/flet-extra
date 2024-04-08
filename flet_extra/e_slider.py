@@ -41,7 +41,7 @@ class ESlider(GestureDetector):
         self.bgcolor = bgcolor
         self.margin = margin
         self.animate = animate
-        self.border_radius = border_radius if border_radius else self.thickness // 2
+        self.border_radius = border_radius
         self.value = value
         self.on_pan_start = self.update_slider
         self.on_pan_update = self.update_slider
@@ -55,6 +55,7 @@ class ESlider(GestureDetector):
         self.build_slider()
 
     def build_slider(self):
+        self.border_radius = self.border_radius or self.thickness // 2
         self.valid_orientations = {
             'horizontal': self.slide_horizontal,
             'vertical': self.slide_vertical
