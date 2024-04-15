@@ -4,7 +4,7 @@ from flet_extra import ESlider
 
 def main(page: ft.Page):
     page.theme_mode = 'dark'
-    page.theme = ft.theme.Theme(color_scheme_seed='#ddaa00')
+    # page.theme = ft.theme.Theme(color_scheme_seed='gray')
     page.spacing = 60
 
 
@@ -15,6 +15,7 @@ def main(page: ft.Page):
                 ESlider(on_change=lambda x: print(f'{x:g}'), margin=5, thickness=30),
                 ESlider(value=150, color='orange', length=400, max=200, min=100, divisions=5, margin=4, thickness=50, border_radius=15, on_change=lambda x: print(f'{x:g}')),
                 ESlider(color='purple', margin=3, on_change=lambda x: print(f'{x:g}')),
+                ESlider(value=66, length=350, thickness=50, margin=-6, color='#88ffffff', gradient_bgcolor=['teal', 'orange', 'pink'])
             ],
             spacing=50,
             horizontal_alignment=ft.CrossAxisAlignment.CENTER

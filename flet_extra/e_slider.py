@@ -10,7 +10,9 @@ from flet_core import (
     Animation,
     AnimationCurve,
     MainAxisAlignment,
-    colors
+    colors,
+    alignment,
+    LinearGradient
 )
 
 
@@ -25,6 +27,7 @@ class ESlider(GestureDetector):
             divisions: Optional[int] = None,
             color: Optional[str] = colors.PRIMARY,
             bgcolor: Optional[str] = colors.PRIMARY_CONTAINER,
+            gradient_bgcolor: list[str] = None,
             margin: Optional[int] = 0,
             animate: AnimationValue = Animation(400, AnimationCurve.EASE),
             border_radius: Optional[int] = None,
@@ -40,6 +43,7 @@ class ESlider(GestureDetector):
         self.divisions = divisions
         self.color = color
         self.bgcolor = bgcolor
+        self.gradient_bgcolor = gradient_bgcolor
         self.margin = margin
         self.animate = animate
         self.border_radius = border_radius
@@ -64,9 +68,17 @@ class ESlider(GestureDetector):
 
         self.slider_background = Container(
             margin=self.margin,
-            bgcolor=self.bgcolor,
             border_radius=self.border_radius - self.margin
         )
+
+        if self.gradient_bgcolor:
+            self.slider_background.gradient = LinearGradient(
+                begin=alignment.center_left if self.orientation == 'horizontal' else alignment.bottom_center,
+                end=alignment.center_right if self.orientation == 'horizontal' else alignment.top_center,
+                colors=self.gradient_bgcolor
+            )
+        else:
+            self.slider_background.bgcolor = self.bgcolor
 
         self.slider_foreground = Container(
             bgcolor=self.color,
