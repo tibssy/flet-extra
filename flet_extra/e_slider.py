@@ -63,10 +63,6 @@ class ESlider(GestureDetector):
         self.build_slider()
 
     def build_slider(self):
-        if self.margin < 0:
-            self.length = self.length + self.margin * 2
-            self.thickness = self.thickness + self.margin * 2
-
         self.border_radius = self.border_radius or self.thickness // 2
         self.valid_orientations = {
             'horizontal': self.slide_horizontal,
