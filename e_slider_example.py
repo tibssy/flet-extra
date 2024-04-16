@@ -16,7 +16,7 @@ def main(page: ft.Page):
                 ESlider(value=150, color='orange', length=400, max=200, min=100, divisions=5, margin=4, thickness=50, border_radius=15, on_change=lambda x: print(f'{x:g}')),
                 ESlider(color='purple', margin=3, on_change=lambda x: print(f'{x:g}')),
                 ESlider(value=66, length=350, thickness=50, margin=-6, color='#88ffffff', gradient_bgcolor=['teal', 'orange', 'pink']),
-                ESlider(length=350, margin=-6, gradient_bgcolor=['#0000ff00', '#00ff00'])
+                ESlider(length=350, margin=-6, gradient_bgcolor=['#0000ff00', '#0000ff00', '#00ff00'])
             ],
             spacing=50,
             horizontal_alignment=ft.CrossAxisAlignment.CENTER

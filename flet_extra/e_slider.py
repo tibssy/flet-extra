@@ -1,4 +1,5 @@
 from typing import Optional
+import os
 
 from flet_core.control import OptionalNumber
 from flet_core.types import AnimationValue
@@ -70,7 +71,7 @@ class ESlider(GestureDetector):
 
         self.slider_transparent = Container(
             margin=self.margin,
-            image_src='transparent_grid.png',
+            image_src=os.path.join(os.path.dirname(__file__), 'transparent_grid.png'),
             image_repeat=ImageRepeat.REPEAT,
             border_radius=self.border_radius - self.margin
         )
