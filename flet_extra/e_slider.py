@@ -70,6 +70,7 @@ class ESlider(GestureDetector):
         }
 
         self.slider_transparent = Container(
+            scale=0.98,
             margin=self.margin,
             image_src=os.path.join(os.path.dirname(__file__), 'transparent_grid.png'),
             image_repeat=ImageRepeat.REPEAT,
