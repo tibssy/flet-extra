@@ -1,5 +1,4 @@
 from typing import Optional
-import os
 
 from flet_core.control import OptionalNumber
 from flet_core.types import AnimationValue
@@ -14,7 +13,6 @@ from flet_core import (
     colors,
     alignment,
     LinearGradient,
-    ImageRepeat
 )
 
 
@@ -56,7 +54,6 @@ class ESlider(GestureDetector):
         self.on_change = on_change
 
         self.content = Stack()
-        self.slider_transparent = None
         self.slider_background = None
         self.slider_foreground = None
         self.valid_orientations = None
@@ -68,13 +65,6 @@ class ESlider(GestureDetector):
             'horizontal': self.slide_horizontal,
             'vertical': self.slide_vertical
         }
-
-        self.slider_transparent = Container(
-            margin=self.margin + 0.5,
-            image_src=os.path.join(os.path.dirname(__file__), 'transparent_grid.png'),
-            image_repeat=ImageRepeat.REPEAT,
-            border_radius=self.border_radius - self.margin
-        )
 
         self.slider_background = Container(
             margin=self.margin,
@@ -102,7 +92,6 @@ class ESlider(GestureDetector):
             self.content.height = self.thickness
 
             self.content.controls = [
-                self.slider_transparent,
                 self.slider_background,
                 self.slider_foreground
             ]
@@ -113,7 +102,6 @@ class ESlider(GestureDetector):
             self.content.height = self.length
 
             self.content.controls = [
-                self.slider_transparent,
                 self.slider_background,
                 Column(
                     controls=[
